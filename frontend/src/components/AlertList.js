@@ -26,9 +26,17 @@ function AlertList({ alerts, onMarkFalseAlarm }) {
             <p>{`Driver: ${alert.driver_friendly_name} / ${alert.vehicle_friendly_name}`}</p>
           </div>
           <div className="ActionButtons">
-            <button onClick={() => onMarkFalseAlarm(alert.id)}>
-              Mark As False Alarm
-            </button>
+            {!alert.markedFalseAlarm ? (
+              <div className="ActionButtons">
+                <button onClick={() => onMarkFalseAlarm(alert.id)}>
+                  Mark As False Alarm
+                </button>
+              </div>
+            ) : (
+              <div className="MarkedFalseAlarm">
+                <p>Marked as False Alarm</p>
+              </div>
+            )}
           </div>
           <hr />
         </div>
