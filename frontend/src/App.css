@@ -15,37 +15,76 @@ body {
 /* SearchBar Styles */
 .SearchBar {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.SearchBar input,
-.SearchBar select,
-.SearchBar label,
-.SearchBar button {
+.SearchInput,
+.VehicleInput,
+.DateRangeInput,
+.SearchButtons {
   margin: 5px;
-  height: 2rem;
-  width: 8rem;
 }
 
-.SearchBar select {
-  margin: 5px;
-  height: 2rem;
-  width: 5rem;
-  appearance: none;
+.SearchInput input,
+.VehicleInput select,
+.DateRangeInput input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Add some bottom margin for spacing */
 }
-/* AlertList Styles */
+
+.DateRangeInput span {
+  margin: 0 10px;
+}
+
+.SearchButtons button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.SearchButtons button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  .SearchInput input,
+  .VehicleInput select,
+  .DateRangeInput input,
+  .SearchButtons button {
+    width: 100%; /* Make inputs and buttons full-width on smaller screens */
+  }
+}
+
 .AlertList {
   margin-top: 20px;
 }
 
 .Alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   padding: 15px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
+}
+
+.AlertDetails {
+  flex-grow: 1;
+}
+
+.ActionButtons {
+  margin-left: 10px;
 }
 
 .Alert button {

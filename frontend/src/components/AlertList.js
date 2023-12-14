@@ -1,6 +1,5 @@
 // components/AlertList.js
 import React from "react";
-import "../App.css";
 
 function formatTimestamp(timestamp) {
   const options = {
@@ -20,18 +19,17 @@ function formatTimestamp(timestamp) {
 function AlertList({ alerts, onMarkFalseAlarm }) {
   return (
     <div>
-      <h2>Alerts</h2>
-      <hr />
       {alerts.map((alert) => (
-        <div key={alert.id}>
-          <p>{`Type: ${alert.alert_type}`}</p>
-          <p>{`Driver: ${alert.driver_friendly_name}`}</p>
-          <p>{`Vehicle: ${alert.vehicle_friendly_name}`}</p>
-          {/* <p>{`Timestamp: ${alert.timestamp}`}</p> */}
-          <p>{`Timestamp: ${formatTimestamp(alert.timestamp)}`}</p>
-          <button onClick={() => onMarkFalseAlarm(alert.id)}>
-            Mark as False Alarm
-          </button>
+        <div key={alert.id} className="Alert">
+          <div className="AlertDetails">
+            <p>{`${alert.alert_type} • ${formatTimestamp(alert.timestamp)}`}</p>
+            <p>{`Driver: ${alert.driver_friendly_name} / ${alert.vehicle_friendly_name}`}</p>
+          </div>
+          <div className="ActionButtons">
+            <button onClick={() => onMarkFalseAlarm(alert.id)}>
+              Mark As False Alarm
+            </button>
+          </div>
           <hr />
         </div>
       ))}
