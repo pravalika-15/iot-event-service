@@ -1,0 +1,8 @@
+.SearchBar input,
+.SearchBar select,
+.SearchBar label,
+.SearchBar button {
+  margin: 5px;
+  height: 10rem;
+  width: 5rem;
+}

@@ -1,0 +1,62 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 3rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* SearchBar Styles */
+.SearchBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.SearchBar input,
+.SearchBar select,
+.SearchBar label,
+.SearchBar button {
+  margin: 5px;
+  height: 2rem;
+  width: 8rem;
+}
+
+.SearchBar select {
+  margin: 5px;
+  height: 2rem;
+  width: 5rem;
+  appearance: none;
+}
+/* AlertList Styles */
+.AlertList {
+  margin-top: 20px;
+}
+
+.Alert {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.Alert button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.Alert button:hover {
+  background-color: #2980b9;
+}
